@@ -32,7 +32,11 @@ impl Serper {
 
         // Serper uses site: in query for domain filtering
         let q = augment_query(query, opts);
-        let url = format!("https://google.serper.dev/{endpoint}");
+        let base_url = std::env::var("SERPER_BASE_URL")
+            .ok()
+            .filter(|url| !url.is_empty())
+            .unwrap_or_else(|| "https://google.serper.dev".to_string());
+        let url = format!("{}/{endpoint}", base_url.trim_end_matches('/'));
         let client = &self.ctx.client;
         let api_key = self.api_key();
 

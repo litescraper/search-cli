@@ -388,3 +388,7 @@ Built by [Boris Djordjevic](https://github.com/longevityboris) at [Paperfoot AI]
 [![Follow @longevityboris](https://img.shields.io/badge/Follow_%40longevityboris-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/longevityboris)
 
 </div>
+
+### Compatible search endpoints
+
+Support any Serper.dev-compatible endpoint (like litescrape.com, serpbase.dev, serpensapi.org, and others). Set `SERPER_BASE_URL` to the provider base URL without `/search` and use its API key. The existing Serper endpoint remains the default.
